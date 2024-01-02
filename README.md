@@ -4,8 +4,7 @@
 ### Kelas :Pagi A
 
 ## Domain Proyek
-
-proyek ini dapat digunakan untuk  memprediksi apakah tingkat keparahan kanker paru-paru yang diderita pasien tinggi, sedang atau rendah dengan menggunakan metode algoritma Decission Tree. Kanker paru-paru adalah penyebab utama kematian akibat kanker di seluruh dunia, terhitung 1,59 juta kematian pada tahun 2018. 
+Kumpulan data ini dibuat  untuk konsep segmentasi pelanggan, yang juga dikenal sebagai analisis keranjang pasar. Saya akan mendemonstrasikannya dengan menggunakan teknik ML tanpa pengawasan (KMeans Clustering Algorithm). 
 
 ## Business Understanding
 
@@ -15,74 +14,21 @@ proyek ini dapat digunakan untuk  memprediksi apakah tingkat keparahan kanker pa
 ### Goals
 - tim pemasaran dapat memahaminya dan merencanakan strategi yang sesuai.
 ### Solution statements
-- Membangun suatu sistem yang dapat mempelajari suatu data (Machine Learning) memprediksi tingkat keparahan kanker paru-paru
-- Sistem berjalan dengan menggunakan metode klasifikasi yang dinilai cocok untuk memprediksi
+- Membangun suatu sistem yang dapat mempelajari data mall customers untuk dilakukan clustering data.
+- Sistem berjalan dengan menggunakan metode K Means yang dinilai cocok untuk melakukan clustering
 ## Data Understanding
-Dataset yang digunakan berasal dari situs Kaggle. Dataset ini mengandung 999 entries dan 24 columns<br><br>
+Dataset yang digunakan berasal dari situs Kaggle. Dataset ini mengandung 200 entries dan 5 columns<br>
 
-[Lung Cancer Prediction](https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link) .
+Mall Customer Segmentation Data (https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python/data) .
 
 Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
 
 ### Variabel-variabel pada kanker paru-paru adalah sebagai berikut:
-
-
-   - Patient_Id = Number Identitas Pasien Peyakit Kanker Paru-paru.
-
-   - Age = Umur Pasien Kanker Paru-paru.
-
-   - Gender = Jenis kelamin Pasien Kanker Paru-paru.
-
-   - Air Pollution = Paparan polusi udara yang mengganggu pernafasan pasien.
-
-   - Alcohol use = Tingkat penggunaan alkohol yang di konsumsi pasien.
-
-   - Dust Allergy = Apakah Pasien mengalami alergi debu.
-
-   - OccuPational Hazards = Bahaya pekerjaan yang dialami oleh pasien di tempat kerjanya. Jenis bahaya pekerjaan bisa berupa bahaya bahan kimia, bahaya bilogis, bahaya        			    psikososial dan bahaya fisik.
-
-   - Genetic Risk = Risiko genetik yang diwariskan dari orang tua pasien melalui gen.
-
-   - chronic Lung Disease = Penyakit paru-paru kronis yang di derita pasien ini dapat mengakibatkan sulit untuk bernafas, dikarenakan paru-paru mengalami peradangan 			    dalam jangka waktu yang lama.
-
-   - Balanced Diet = Diet seimbang atau diet sehat pasien ini untuk membantu, menjaga dan meningkatkan kesehatan pasien secara keseluruhan. Diet ini menyediakan gizi 		     yang penting bagi tubuh, yaitu cairan, makronutrein, mikronutren, dan energi makanan yang cukup.
-
-   - Obesity = Suatu gangguan yang melibatkan lemak tubuh berlebihan yang meningkat risiko masalah kesehatan Pasien. Obesitas sering kali terjadi karena kalori yang 	       masuk lebih banyak, daripada yang di bakar melalui olahraga dan kegiatan sehari-hari.
-
-   - Smoking = Riwayat merokok pada pasien.
-
-   - Passive Smoker = Pasien yang mempunyai riwayat perokok pasif atau seseorang yang menghirup asap rokok dari perokok aktif. Pasien yang mempunyai riwayat ini lebih 		      berbahaya menyebabkan penyakit paru-paru.
-
-   - Chest Pain = Gejala nyeri dada pada pasien dalam waktu singkat yang dapat menyebabkan kematian.
-
-   - Coughing of Blood = Batuk berdarah yang di alami oleh pasien dari Paru-paru.
-
-   - Fatigue = Perubahan dari keadaan pasien dari yang lebih kuat mejadi keadaan yang lebih lemah.
-
-   - Weight Loss = Penurunan berat baadan secara keseluruhan yang di alami oleh pasien.
-
-   - Shortness of Breath = Masalah kesehatan yang membuat seseorang kesulitan untuk menghirup udara.
-
-   - Wheezing = Mengi, suara khas yang berasal dari saluran pernapasan yang menyempit. Mengi ini menghasilkan siulan yang akan terdengar jelas ketika penderita 		menghirup dan menghembuskan nafas.
-
-   - Swallowing Difficulty = Kesulitan menelan yang di alami pasien karena memasukkan makanan terlalu banyak makanan ke dalam mulut, tidak mengunyah makanan dengan 			     benar, mulut kering, pil, atau makanan terlalu panas.
-
-   - Clubbing of Finger Nails = Kondisi jari-jari tangan atau kaki pasien yang membengkak. Kondisi ini terjadi akibat kelainan genetik, atau gangguan di paru-paru dan 			        jantung.
-
-   - Frequent Cold = kondisi frekuensi dingin pasien.
-
-   - Dry Cough = Salah satu jenis batuk yang tidak mengeluarkan lendir atau dahak, batuk ini biasanya terjadi akibat udara sekitar pasien kering.
-
-   - Snoring = Suara mendengkur pasien saat tidur. Terjadi saat rasa lelah setelah melakukan aktivitas banyak dan berat sehari-hari.
-
-   - level = Label yang membahas tingkat keparahan kanker paru-paru pada pasien :
-
-        - High = 0
-        - Medium = 2
-        - Low = 1
-
-
-
+ - customer id
+ - gender
+ - age
+ - Annual Income (k$)
+ - Spending Score (1-100)
 ## Import Library yang dibutuhkan
 ```bash
 import pandas as pd
