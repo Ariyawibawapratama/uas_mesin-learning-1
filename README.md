@@ -197,7 +197,7 @@ Jumlah cluster terbaik adalah 5
 final_model = KMeans(n_clusters=5 , random_state= 42)
 final_model.fit(X)
 ```
-![Alt text](k.jpg) <br>
+![Alt text](l.jpg) <br>
 ```bash
 labels = final_model.labels_
 centroids = final_model.cluster_centers_
