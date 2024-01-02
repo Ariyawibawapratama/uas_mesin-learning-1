@@ -126,6 +126,7 @@ for x in ['Age' , 'Annual Income (k$)' , 'Spending Score (1-100)']:
     plt.title('Distplot of {}'.format(x))
 plt.show();
 ```
+![Alt text](a.jpeg) <br>
 fitur-fitur ini karena memiliki sedikit kemiringan cenderung terdistribusi secara normal
 
 ```bash
@@ -134,6 +135,7 @@ plt.xlabel('Age')
 plt.ylabel('Count')
 plt.title('Spending Score(51 ~ 100): Age Distribution');
 ```
+![Alt text](b.jpeg) <br>
 Histogram kami menunjukkan bahwa banyak orang yang memiliki skor pengeluaran lebih dari 50 adalah orang-orang muda.
 
 Hitung Plot Gender
@@ -143,11 +145,13 @@ sns.countplot(y = 'Gender' , data = df_score)
 plt.title('Spending Score(51 ~ 100): Gender Distribution')
 plt.show();
 ```
+![Alt text](c.jpeg) <br>
 ```bash
 plt.figure(figsize = (15 , 5))
 sns.countplot(y = 'Gender' , data = df)
 plt.title('Gender Distribution')
 plt.show();
+![Alt text](d.jpeg) <br>
 ```
 Merencanakan Hubungan antara Usia, Pendapatan Tahunan dan Skor Pengeluaran
 ```bash
@@ -162,6 +166,7 @@ for x in ['Age' , 'Annual Income (k$)' , 'Spending Score (1-100)']:
         plt.ylabel(y.split()[0]+' '+y.split()[1] if len(y.split()) > 1 else y )
 plt.show()
 ```
+![Alt text](e.jpeg) <br>
 ```bash
 plt.figure(1 , figsize = (15 , 6))
 for gender in ['Male' , 'Female']:
@@ -172,6 +177,7 @@ plt.title('Age vs Annual Income w.r.t Gender')
 plt.legend()
 plt.show()
 ```
+![Alt text](f.jpeg) <br>
 ```bash
 plt.figure(1 , figsize = (15 , 6))
 for gender in ['Male' , 'Female']:
@@ -182,6 +188,7 @@ plt.title('Annual Income vs Spending Score w.r.t Gender')
 plt.legend()
 plt.show()
 ```
+![Alt text](g.jpeg) <br>
 ```bash
 plt.figure(1 , figsize = (15 , 7))
 n = 0
@@ -195,6 +202,7 @@ for cols in ['Age' , 'Annual Income (k$)' , 'Spending Score (1-100)']:
     plt.title('Boxplots & Swarmplots' if n == 2 else '')
 plt.show()
 ```
+![Alt text](h.jpeg) <br>
 ## Split
 ```bash
 X = df.iloc[: , [3,4]]
@@ -230,12 +238,14 @@ fig = px.line(x= range(2 , 13) , y= inertia_errors , title="K-Means Model: Inert
 fig.update_layout(xaxis_title="Number of Clusters" , yaxis_title="Inertia")
 fig.show()
 ```
+![Alt text](i.jpeg) <br>
 ```bash
 # Buat plot garis `silhouette_scores` vs `n_clusters`
 fig = px.line(x= n_clusters , y= silhouette_scores , title= "K-Means Model: Silhouette Score vs Number of Clusters")
 fig.update_layout(xaxis_title= 'Number of Clusters' , yaxis_title= 'Silhouette Score')
 fig.show();
 ```
+![Alt text](j.jpeg) <br>
 Jumlah cluster terbaik adalah 5
 ```bash
 final_model = KMeans(n_clusters=5 , random_state= 42)
@@ -263,6 +273,7 @@ plt.xlabel("Annual Income (k$)")
 plt.ylabel("Spending Score (1-100)")
 plt.title("Annual Income vs. Spending Score");
 ```
+![Alt text](m.jpeg) <br>
 ```bash
 # Buat diagram batang `xgb` berdampingan
 xgb= X.groupby(final_model.labels_).mean()
@@ -275,6 +286,7 @@ fig.update_layout(xaxis_title= "Clusters" , yaxis_title= 'Value')
 
 fig.show()
 ```
+![Alt text](n.jpeg) <br>
 ## simpan model (Pickle)
 ```bash
 iX.to_excel("output_cluster.xlsx")
