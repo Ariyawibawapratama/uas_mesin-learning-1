@@ -97,8 +97,8 @@ plt.figure(figsize = (15 , 5))
 sns.countplot(y = 'Gender' , data = df)
 plt.title('Gender Distribution')
 plt.show();
-![Alt text](d.jpg) <br>
 ```
+![Alt text](d.jpg) <br>
 Merencanakan Hubungan antara Usia, Pendapatan Tahunan dan Skor Pengeluaran
 ```bash
 plt.figure(1 , figsize = (15 , 7))
