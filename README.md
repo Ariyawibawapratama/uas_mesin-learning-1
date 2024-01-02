@@ -155,6 +155,8 @@ X = df.iloc[: , [3,4]]
 print(f"X Shape {X.shape}")
 X.head()
 ```
+![Alt text](h.jpg) <br>
+
 ## modeling
 Clustring Using K-Means
 Iterate
@@ -184,14 +186,14 @@ fig = px.line(x= range(2 , 13) , y= inertia_errors , title="K-Means Model: Inert
 fig.update_layout(xaxis_title="Number of Clusters" , yaxis_title="Inertia")
 fig.show()
 ```
-![Alt text](i.jpg) <br>
+![Alt text](j.jpg) <br>
 ```bash
 # Buat plot garis `silhouette_scores` vs `n_clusters`
 fig = px.line(x= n_clusters , y= silhouette_scores , title= "K-Means Model: Silhouette Score vs Number of Clusters")
 fig.update_layout(xaxis_title= 'Number of Clusters' , yaxis_title= 'Silhouette Score')
 fig.show();
 ```
-![Alt text](j.jpg) <br>
+![Alt text](k.jpg) <br>
 Jumlah cluster terbaik adalah 5
 ```bash
 final_model = KMeans(n_clusters=5 , random_state= 42)
